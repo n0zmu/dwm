@@ -9,15 +9,15 @@ static const char *fonts[]          = { "JetBrains Mono:size=11" };
 static const char dmenufont[]       = "JetBrains Mono:size=11";
 static unsigned int baralpha        = 250;
 static unsigned int borderalpha     = OPAQUE;
-static const char col_gray1[]       = "#222222";
+static const char col_gray1[]       = "#000000";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#95BDFF";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { col_cyan, col_gray1, col_gray2 },
+	[SchemeSel]  = { col_gray1, col_cyan,  col_cyan  },
 };
 
 /* tagging */
@@ -39,6 +39,10 @@ static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] 
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const char *lockcmd[]  = { "slock",  NULL };
+static const char *upvol[]    = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
+static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
+static const char *mutevol[]  = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
 
 #include "tatami.c"
 static const Layout layouts[] = {
@@ -50,6 +54,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
+
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -73,6 +78,10 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = brwsrcmd } },
 	{ MODKEY,		        XK_s,      spawn,   	   {.v = strmcmd } },
+	{ MODKEY,           		XK_x,      spawn,          {.v = lockcmd } },
+	{ MODKEY,                       XK_F9,     spawn,          {.v = mutevol } },
+	{ MODKEY,                       XK_F11,    spawn,          {.v = downvol } },
+	{ MODKEY,                       XK_F12,    spawn,          {.v = upvol   } },
 	{ MODKEY,                       XK_n,      togglebar,      {0} },
 	{ MODKEY,                       XK_space,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
