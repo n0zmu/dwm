@@ -1,0 +1,9 @@
+Arch
+base-devel libx11 libxft libxinerama freetype2 fontconfig
+
+Void
+base-devel libX11-devel libXft-devel libXinerama-devel freetype-devel fontconfig-devel
+
+Fonts
+ttf-hack
+ttf-font-awesome
