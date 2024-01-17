@@ -30,9 +30,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Discord", NULL,	  NULL,	      1 << 8,	    0,		 -1 },
+	{ "discord",  NULL,	      NULL,	      1 << 8,	    0,		     -1 },
 	{ "Spotify",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Audacious", NULL,	  NULL,	      NULL,	    1,		 -1 },
+	{ "Audacious", NULL,	  NULL,	      NULL,	        1,		     -1 },
 };
 
 /* layout(s) */
@@ -78,8 +78,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = brwsrcmd } },
-	{ MODKEY,		        XK_s,      spawn,   	   {.v = strmcmd } },
-	{ MODKEY,           		XK_x,      spawn,          {.v = lockcmd } },
+	{ MODKEY,		                XK_s,      spawn,   	   {.v = strmcmd } },
+	{ MODKEY,           		    XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY,                       XK_F9,     spawn,          {.v = mutevol } },
 	{ MODKEY,                       XK_F11,    spawn,          {.v = downvol } },
 	{ MODKEY,                       XK_F12,    spawn,          {.v = upvol   } },
