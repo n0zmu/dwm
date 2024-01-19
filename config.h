@@ -69,9 +69,9 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *brwsrcmd[] = { "chromium", NULL };
 static const char *strmcmd[]  = { "audacious", NULL };
 static const char *lockcmd[]  = { "slock",  NULL };
-static const char *upvol[]    = { "/usr/bin/pactl", "set-sink-volume", "1", "+5%",     NULL };
-static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "1", "-5%",     NULL };
-static const char *mutevol[]  = { "/usr/bin/pactl", "set-sink-mute",   "1", "toggle",  NULL };
+static const char *upvol[]    = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
+static const char *downvol[]  = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%",     NULL };
+static const char *mutevol[]  = { "/usr/bin/pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle",  NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
