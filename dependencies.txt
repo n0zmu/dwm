@@ -5,8 +5,8 @@ Void
 base-devel libX11-devel libXft-devel libXinerama-devel freetype-devel fontconfig-devel
 
 Fonts
-ttf-hack
-ttf-font-awesome
+ttf-hack / font-hack-ttf
+ttf-font-awesome / font-awesome6
 
 ALL
 https://git.suckless.org/dmenu
