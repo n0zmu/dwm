@@ -14,13 +14,13 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_orange[]      = "#ffb4b4";
+static const char col_pink[]      = "#ffb4b4";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_yellow,  col_yellow  },
+	[SchemeSel]  = { col_gray1, col_pink,  col_pink  },
     [SchemeStatus]  = { col_gray3, col_gray1,  NULL  }, // Statusbar right {text,background,not used but cannot be empty}
-	[SchemeTagsSel]  = { col_gray1, col_yellow,  NULL  }, // Tagbar left selected {text,background,not used but cannot be empty}
+	[SchemeTagsSel]  = { col_gray1, col_pink,  NULL  }, // Tagbar left selected {text,background,not used but cannot be empty}
 	[SchemeTagsNorm]  = { col_gray3, col_gray1,  NULL  }, // Tagbar left unselected {text,background,not used but cannot be empty}
 	[SchemeInfoSel]  = { col_gray3, col_gray1,  NULL  }, // infobar middle  selected {text,background,not used but cannot be empty}
 	[SchemeInfoNorm]  = { col_gray3, col_gray1,  NULL  }, // infobar middle  unselected {text,background,not used but cannot be empty}
@@ -67,9 +67,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_yellow, "-sf", col_gray1, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_pink, "-sf", col_gray1, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *brwsrcmd[] = { "chromium", NULL };
+static const char *brwsrcmd[] = { "firefox", NULL };
  static const char *strmcmd[]  = { "audacious", NULL };
  static const char *lockcmd[]  = { "slock",  NULL };
  static const char *upvol[]    = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%",     NULL };
